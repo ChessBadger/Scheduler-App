@@ -1,0 +1,50 @@
+﻿<Window x:Class="Badger_Scheduler.EmployeePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Badger_Scheduler"
+        mc:Ignorable="d"
+        Title="EmployeePage" Height="800" Width="1000">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Viewbox Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="First Name:" FontSize="18" />
+                <TextBox x:Name="txtFirstName" Grid.Row="0" Grid.Column="1" FontSize="18" />
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Last Name:" FontSize="18"/>
+                <TextBox x:Name="txtLastName" Grid.Row="1" Grid.Column="1" FontSize="18"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Employee ID:" FontSize="18"/>
+                <TextBox x:Name="txtEmployeeID" Grid.Row="2" Grid.Column="1" FontSize="18"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Performance Rating:" FontSize="18"/>
+                <TextBox x:Name="txtPerformanceRating" Grid.Row="3" Grid.Column="1" FontSize="18" />
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Attendance Rating:" FontSize="18"/>
+                <TextBox x:Name="txtAttendanceRating" Grid.Row="4" Grid.Column="1" FontSize="18"/>
+
+                <CheckBox x:Name="chkIsSupervisor" Grid.Row="5" Grid.Column="0" Content="Is Supervisor" FontSize="18"/>
+                <Button x:Name="btnAddEmployee" Grid.Row="5" Grid.Column="1" Width="150" Height="40" Content="Add Employee" Margin="10" 
+                    Click="btnAddEmployee_Click" FontSize="18"/>
+                <DataGrid x:Name="dgEmployees" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" SelectedCellsChanged="dgEmployees_SelectedCellsChanged" 
+                      ItemsSource="{Binding dgEmployees}" FontSize="15"/>
+
+            </Grid>
+        </Viewbox>
+    </ScrollViewer>
+</Window>
